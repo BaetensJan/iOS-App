@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (4.7.3)
+  - SearchTextField (1.2.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - SearchTextField
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - SearchTextField
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  SearchTextField: a0992739d4b05dcbb40fb3a5cc6526bd991bdd23
+
+PODFILE CHECKSUM: 19a68db729c89c74895aea09ab686094b92cca37
+
+COCOAPODS: 1.5.3

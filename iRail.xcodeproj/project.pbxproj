@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E31BD0521B00B170006333F /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0421B00B170006333F /* Landing.swift */; };
+		1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */; };
 		1EB3830221A45967007C529F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3830121A45967007C529F /* AppDelegate.swift */; };
-		1EB3830421A45967007C529F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3830321A45967007C529F /* ViewController.swift */; };
 		1EB3830721A45967007C529F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830521A45967007C529F /* Main.storyboard */; };
 		1EB3830921A45969007C529F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830821A45969007C529F /* Assets.xcassets */; };
 		1EB3830C21A45969007C529F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830A21A45969007C529F /* LaunchScreen.storyboard */; };
+		1EB3831721A45BD7007C529F /* ConnectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3831621A45BD7007C529F /* ConnectionWrapper.swift */; };
+		1EB3831921A45BE6007C529F /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3831821A45BE6007C529F /* Connection.swift */; };
+		1EB3832021A45E2F007C529F /* ConnectionSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3831F21A45E2F007C529F /* ConnectionSearchController.swift */; };
+		1EB3832521A55CA8007C529F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3832421A55CA7007C529F /* Default-568h@2x.png */; };
+		34895436BD1527E924DC2D94 /* Pods_iRail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B7067CC072605D17233948 /* Pods_iRail.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19EBC0C55EB1ECEF9B040EF5 /* Pods-iRail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRail.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRail/Pods-iRail.release.xcconfig"; sourceTree = "<group>"; };
+		1E31BD0421B00B170006333F /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
+		1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		1EB382FE21A45967007C529F /* iRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB3830121A45967007C529F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1EB3830321A45967007C529F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1EB3830621A45967007C529F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1EB3830821A45969007C529F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1EB3830B21A45969007C529F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1EB3830D21A45969007C529F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EB3831621A45BD7007C529F /* ConnectionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionWrapper.swift; sourceTree = "<group>"; };
+		1EB3831821A45BE6007C529F /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		1EB3831F21A45E2F007C529F /* ConnectionSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSearchController.swift; sourceTree = "<group>"; };
+		1EB3832421A55CA7007C529F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		95B7067CC072605D17233948 /* Pods_iRail.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRail.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F349EB50EAB72133DA66F4FF /* Pods-iRail.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRail.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iRail/Pods-iRail.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34895436BD1527E924DC2D94 /* Pods_iRail.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AD92871EAB710DF8DB138D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95B7067CC072605D17233948 /* Pods_iRail.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E31BD0621B00D550006333F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		1EB382F521A45967007C529F = {
 			isa = PBXGroup;
 			children = (
+				1EB3832421A55CA7007C529F /* Default-568h@2x.png */,
 				1EB3830021A45967007C529F /* iRail */,
 				1EB382FF21A45967007C529F /* Products */,
+				9BFB409D8FC3DBF22492245F /* Pods */,
+				1AD92871EAB710DF8DB138D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +88,51 @@
 		1EB3830021A45967007C529F /* iRail */ = {
 			isa = PBXGroup;
 			children = (
+				1E31BD0621B00D550006333F /* Custom */,
+				1EB3831B21A45C2F007C529F /* Controllers */,
+				1EB3831A21A45C14007C529F /* SupportFiles */,
+				1EB3831521A45ADC007C529F /* Models */,
+			);
+			path = iRail;
+			sourceTree = "<group>";
+		};
+		1EB3831521A45ADC007C529F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3831621A45BD7007C529F /* ConnectionWrapper.swift */,
+				1EB3831821A45BE6007C529F /* Connection.swift */,
+				1E31BD0421B00B170006333F /* Landing.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1EB3831A21A45C14007C529F /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				1EB3830121A45967007C529F /* AppDelegate.swift */,
-				1EB3830321A45967007C529F /* ViewController.swift */,
 				1EB3830521A45967007C529F /* Main.storyboard */,
 				1EB3830821A45969007C529F /* Assets.xcassets */,
 				1EB3830A21A45969007C529F /* LaunchScreen.storyboard */,
 				1EB3830D21A45969007C529F /* Info.plist */,
 			);
-			path = iRail;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		1EB3831B21A45C2F007C529F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3831F21A45E2F007C529F /* ConnectionSearchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9BFB409D8FC3DBF22492245F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F349EB50EAB72133DA66F4FF /* Pods-iRail.debug.xcconfig */,
+				19EBC0C55EB1ECEF9B040EF5 /* Pods-iRail.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EB3831021A45969007C529F /* Build configuration list for PBXNativeTarget "iRail" */;
 			buildPhases = (
+				A1181557DBCA0F15E30B01F3 /* [CP] Check Pods Manifest.lock */,
 				1EB382FA21A45967007C529F /* Sources */,
 				1EB382FB21A45967007C529F /* Frameworks */,
 				1EB382FC21A45967007C529F /* Resources */,
+				1EC7204EFB991B91E05F2EDD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,19 +197,73 @@
 			files = (
 				1EB3830C21A45969007C529F /* LaunchScreen.storyboard in Resources */,
 				1EB3830921A45969007C529F /* Assets.xcassets in Resources */,
+				1EB3832521A55CA8007C529F /* Default-568h@2x.png in Resources */,
 				1EB3830721A45967007C529F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EC7204EFB991B91E05F2EDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iRail/Pods-iRail-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SearchTextField/SearchTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SearchTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iRail/Pods-iRail-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1181557DBCA0F15E30B01F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iRail-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1EB382FA21A45967007C529F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EB3830421A45967007C529F /* ViewController.swift in Sources */,
 				1EB3830221A45967007C529F /* AppDelegate.swift in Sources */,
+				1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */,
+				1EB3831721A45BD7007C529F /* ConnectionWrapper.swift in Sources */,
+				1EB3831921A45BE6007C529F /* Connection.swift in Sources */,
+				1E31BD0521B00B170006333F /* Landing.swift in Sources */,
+				1EB3832021A45E2F007C529F /* ConnectionSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,10 +407,11 @@
 		};
 		1EB3831121A45969007C529F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F349EB50EAB72133DA66F4FF /* Pods-iRail.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = iRail/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iRail/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,10 +425,11 @@
 		};
 		1EB3831221A45969007C529F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19EBC0C55EB1ECEF9B040EF5 /* Pods-iRail.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = iRail/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iRail/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
