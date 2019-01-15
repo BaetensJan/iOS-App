@@ -8,11 +8,12 @@
 import UIKit
 import Alamofire
 
-class DisturbanceViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+class DisturbanceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var disturbanceTableView: UITableView!
     
     var disturbances: DisturbanceWrapper? = nil
+    var touchedDisturbance:Disturbance? = nil
     
     
     override func viewDidLoad() {
@@ -48,4 +49,14 @@ class DisturbanceViewController: UIViewController, UITextFieldDelegate, UITableV
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.touchedDisturbance = disturbances?.disturbance[indexPath.item]
+        self.performSegue(withIdentifier: "disturbanceDetailSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Create a new variable to store the instance of DisturbanceDetailViewController
+        let destinationVC = segue.destination as! DisturbanceDetailViewController
+        destinationVC.disturbance = self.touchedDisturbance
+    }
 }
