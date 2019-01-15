@@ -11,7 +11,7 @@ import SearchTextField
 import Alamofire
 
 
-class ConnectionSearchController: UIViewController, UITextFieldDelegate {
+class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // Connect your IBOutlet...
     @IBOutlet weak var toStationSearchField: SearchTextField!
@@ -21,6 +21,7 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var connectionTableView: UITableView!
     
+    var connection: ConnectionWrapper? = nil
     let timePicker = UIDatePicker()
     let datePicker = UIDatePicker()
     
@@ -35,6 +36,8 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate {
         
         txtDatePicker.delegate = self
         txtTimePicker.delegate = self
+        self.connectionTableView.dataSource = self
+        self.connectionTableView.delegate = self
         
         Alamofire.request("https://api.irail.be/stations/?format=json&lang=en").responseJSON { response in
             if let json = response.result.value {
@@ -129,10 +132,38 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate {
         Alamofire.request("https://api.irail.be/connections/?from=Gent-Sint-Pieters&to=Mechelen&date=301218&time=1230&timesel=departure&format=json&lang=en&fast=false&typeOfTransport=trains&alerts=false&results=6").responseJSON { response in
             if let json = response.data {
                 let decoder = JSONDecoder()
-                let connection = try! decoder.decode(ConnectionWrapper.self, from: json)
-                print(connection.connection)
+                self.connection = try! decoder.decode(ConnectionWrapper.self, from: json)
+                print(self.connection?.connection ?? "")
+                self.connectionTableView.reloadData()
             }
             self.connectionTableView.isHidden = false
         }
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return connection?.connection.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "connectionTableViewCell", for: indexPath) as! ConnectionTableViewCell
+        if (connection != nil) {
+            let from = connection?.connection[indexPath.item].arrival.station
+            let to = connection?.connection[indexPath.item].departure.station
+            let fromTime = connection?.connection[indexPath.item].departure.time
+            let toTime = connection?.connection[indexPath.item].arrival.time
+            cell.toLabel?.text = to
+            cell.fromLabel.text = from
+            cell.departureTime?.text = convertFrom(fromTime!)
+            cell.arrivalTime.text = convertFrom(toTime!)
+        }
+        return cell
+    }
+    
+    func convertFrom(_ miliseconds: String) -> String {
+        let date = Date(timeIntervalSince1970: Double(miliseconds)!)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
+    }
+    
 }

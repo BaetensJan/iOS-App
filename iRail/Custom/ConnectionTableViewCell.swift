@@ -12,6 +12,8 @@ class ConnectionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var fromLabel: UILabel!
     @IBOutlet weak var toLabel: UILabel!
+    @IBOutlet weak var departureTime: UILabel!
+    @IBOutlet weak var arrivalTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E273A5F21EDEBFB0072494D /* DisturbanceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A5E21EDEBFB0072494D /* DisturbanceWrapper.swift */; };
+		1E273A6121EDEC070072494D /* Disturbance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6021EDEC070072494D /* Disturbance.swift */; };
+		1E273A6321EDEF1A0072494D /* DisturbanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6221EDEF1A0072494D /* DisturbanceViewController.swift */; };
+		1E273A6521EDF2060072494D /* DisturbanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6421EDF2060072494D /* DisturbanceTableViewCell.swift */; };
 		1E31BD0521B00B170006333F /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0421B00B170006333F /* Landing.swift */; };
 		1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */; };
 		1EB3830221A45967007C529F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3830121A45967007C529F /* AppDelegate.swift */; };
@@ -22,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		19EBC0C55EB1ECEF9B040EF5 /* Pods-iRail.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRail.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRail/Pods-iRail.release.xcconfig"; sourceTree = "<group>"; };
+		1E273A5E21EDEBFB0072494D /* DisturbanceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisturbanceWrapper.swift; sourceTree = "<group>"; };
+		1E273A6021EDEC070072494D /* Disturbance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disturbance.swift; sourceTree = "<group>"; };
+		1E273A6221EDEF1A0072494D /* DisturbanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisturbanceViewController.swift; sourceTree = "<group>"; };
+		1E273A6421EDF2060072494D /* DisturbanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisturbanceTableViewCell.swift; sourceTree = "<group>"; };
 		1E31BD0421B00B170006333F /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		1EB382FE21A45967007C529F /* iRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,10 +66,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1E273A5C21EDEB420072494D /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3831621A45BD7007C529F /* ConnectionWrapper.swift */,
+				1EB3831821A45BE6007C529F /* Connection.swift */,
+				1E31BD0421B00B170006333F /* Landing.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		1E273A5D21EDEBE50072494D /* Disturbance */ = {
+			isa = PBXGroup;
+			children = (
+				1E273A5E21EDEBFB0072494D /* DisturbanceWrapper.swift */,
+				1E273A6021EDEC070072494D /* Disturbance.swift */,
+			);
+			path = Disturbance;
+			sourceTree = "<group>";
+		};
 		1E31BD0621B00D550006333F /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */,
+				1E273A6421EDF2060072494D /* DisturbanceTableViewCell.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -99,9 +127,8 @@
 		1EB3831521A45ADC007C529F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1EB3831621A45BD7007C529F /* ConnectionWrapper.swift */,
-				1EB3831821A45BE6007C529F /* Connection.swift */,
-				1E31BD0421B00B170006333F /* Landing.swift */,
+				1E273A5D21EDEBE50072494D /* Disturbance */,
+				1E273A5C21EDEB420072494D /* Connection */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -122,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				1EB3831F21A45E2F007C529F /* ConnectionSearchController.swift */,
+				1E273A6221EDEF1A0072494D /* DisturbanceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,11 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E273A6321EDEF1A0072494D /* DisturbanceViewController.swift in Sources */,
+				1E273A6121EDEC070072494D /* Disturbance.swift in Sources */,
+				1E273A5F21EDEBFB0072494D /* DisturbanceWrapper.swift in Sources */,
 				1EB3830221A45967007C529F /* AppDelegate.swift in Sources */,
 				1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */,
 				1EB3831721A45BD7007C529F /* ConnectionWrapper.swift in Sources */,
 				1EB3831921A45BE6007C529F /* Connection.swift in Sources */,
 				1E31BD0521B00B170006333F /* Landing.swift in Sources */,
+				1E273A6521EDF2060072494D /* DisturbanceTableViewCell.swift in Sources */,
 				1EB3832021A45E2F007C529F /* ConnectionSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
