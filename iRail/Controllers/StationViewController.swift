@@ -16,6 +16,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     
     var stationsNames: [String] = []
     var results:[String] = []
+    var touchedStation: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,17 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "stationTableViewCell", for: indexPath) as! StationTableViewCell
             cell.stationLabel?.text = results[indexPath.item]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.touchedStation = results[indexPath.item]
+        self.performSegue(withIdentifier: "stationLiveBoardSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Create a new variable to store the instance of StationLiveBoardViewController
+        let destinationVC = segue.destination as! StationLiveBoardViewController
+        destinationVC.station = self.touchedStation
     }
 }
 

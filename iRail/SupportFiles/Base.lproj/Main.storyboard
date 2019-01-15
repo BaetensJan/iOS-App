@@ -171,7 +171,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-Xr-gCb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-Xr-gCb">
                                                     <rect key="frame" x="15" y="11" width="313" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -216,11 +216,43 @@
                         <outlet property="searchButton" destination="n9u-vk-XAU" id="SLS-f6-aRD"/>
                         <outlet property="stationTableView" destination="0Gp-mK-TbB" id="jmP-2k-xOS"/>
                         <outlet property="stationTextField" destination="XDJ-et-GhN" id="ZZ7-eJ-sHQ"/>
+                        <segue destination="ReW-u4-kX0" kind="show" identifier="stationLiveBoardSegue" id="Izd-Hv-3xf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afS-fJ-0MO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="219" y="-486"/>
+        </scene>
+        <!--Station Live Board View Controller-->
+        <scene sceneID="x9g-5z-RjE">
+            <objects>
+                <viewController id="ReW-u4-kX0" customClass="StationLiveBoardViewController" customModule="iRail" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lTQ-AD-yX1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZG-pE-eyE">
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7RY-4x-7Ev" firstAttribute="trailing" secondItem="oZG-pE-eyE" secondAttribute="trailing" constant="16" id="5Bj-SU-X1b"/>
+                            <constraint firstItem="oZG-pE-eyE" firstAttribute="top" secondItem="7RY-4x-7Ev" secondAttribute="top" constant="16" id="657-d6-kCu"/>
+                            <constraint firstItem="oZG-pE-eyE" firstAttribute="leading" secondItem="7RY-4x-7Ev" secondAttribute="leading" constant="16" id="XKQ-Oq-3U6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7RY-4x-7Ev"/>
+                    </view>
+                    <connections>
+                        <outlet property="stationLabel" destination="oZG-pE-eyE" id="0pl-ES-RuD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iUx-M9-ChX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1210" y="-484"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ANx-BT-EKX">
