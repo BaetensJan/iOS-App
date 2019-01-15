@@ -129,7 +129,12 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
     }
     
     @IBAction func searchButtonTouchUp(_ sender: Any) {
-        Alamofire.request("https://api.irail.be/connections/?from=Gent-Sint-Pieters&to=Mechelen&date=301218&time=1230&timesel=departure&format=json&lang=en&fast=false&typeOfTransport=trains&alerts=false&results=6").responseJSON { response in
+        
+        let request = Alamofire.request("https://api.irail.be/connections/?from=Gent-Sint-Pieters&to=Mechelen&date=301218&time=1230&timesel=departure&format=json&lang=en&fast=false&typeOfTransport=trains&alerts=false&results=6")
+        request.validate()
+        request.response { response in
+            if response.error == nil {
+            
             if let json = response.data {
                 let decoder = JSONDecoder()
                 self.connection = try! decoder.decode(ConnectionWrapper.self, from: json)
@@ -137,6 +142,7 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
                 self.connectionTableView.reloadData()
             }
             self.connectionTableView.isHidden = false
+            }
         }
     }
     

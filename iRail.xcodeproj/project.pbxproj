@@ -12,8 +12,10 @@
 		1E273A6321EDEF1A0072494D /* DisturbanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6221EDEF1A0072494D /* DisturbanceViewController.swift */; };
 		1E273A6521EDF2060072494D /* DisturbanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6421EDF2060072494D /* DisturbanceTableViewCell.swift */; };
 		1E273A6721EDF6950072494D /* DisturbanceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6621EDF6950072494D /* DisturbanceDetailViewController.swift */; };
+		1E273A6B21EE417A0072494D /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E273A6A21EE417A0072494D /* StationViewController.swift */; };
 		1E31BD0521B00B170006333F /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0421B00B170006333F /* Landing.swift */; };
 		1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */; };
+		1E58CA5421EE47C100F8AB9D /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58CA5321EE47C100F8AB9D /* StationTableViewCell.swift */; };
 		1EB3830221A45967007C529F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3830121A45967007C529F /* AppDelegate.swift */; };
 		1EB3830721A45967007C529F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830521A45967007C529F /* Main.storyboard */; };
 		1EB3830921A45969007C529F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830821A45969007C529F /* Assets.xcassets */; };
@@ -32,8 +34,10 @@
 		1E273A6221EDEF1A0072494D /* DisturbanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisturbanceViewController.swift; sourceTree = "<group>"; };
 		1E273A6421EDF2060072494D /* DisturbanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisturbanceTableViewCell.swift; sourceTree = "<group>"; };
 		1E273A6621EDF6950072494D /* DisturbanceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisturbanceDetailViewController.swift; sourceTree = "<group>"; };
+		1E273A6A21EE417A0072494D /* StationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		1E31BD0421B00B170006333F /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
 		1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
+		1E58CA5321EE47C100F8AB9D /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		1EB382FE21A45967007C529F /* iRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB3830121A45967007C529F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EB3830621A45967007C529F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			children = (
 				1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */,
 				1E273A6421EDF2060072494D /* DisturbanceTableViewCell.swift */,
+				1E58CA5321EE47C100F8AB9D /* StationTableViewCell.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				1EB3831F21A45E2F007C529F /* ConnectionSearchController.swift */,
 				1E273A6221EDEF1A0072494D /* DisturbanceViewController.swift */,
 				1E273A6621EDF6950072494D /* DisturbanceDetailViewController.swift */,
+				1E273A6A21EE417A0072494D /* StationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,7 +297,9 @@
 			files = (
 				1E273A6321EDEF1A0072494D /* DisturbanceViewController.swift in Sources */,
 				1E273A6121EDEC070072494D /* Disturbance.swift in Sources */,
+				1E58CA5421EE47C100F8AB9D /* StationTableViewCell.swift in Sources */,
 				1E273A5F21EDEBFB0072494D /* DisturbanceWrapper.swift in Sources */,
+				1E273A6B21EE417A0072494D /* StationViewController.swift in Sources */,
 				1EB3830221A45967007C529F /* AppDelegate.swift in Sources */,
 				1E273A6721EDF6950072494D /* DisturbanceDetailViewController.swift in Sources */,
 				1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */,
