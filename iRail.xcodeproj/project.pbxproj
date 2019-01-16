@@ -17,6 +17,7 @@
 		1E31BD0821B00DB30006333F /* ConnectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */; };
 		1E58CA5421EE47C100F8AB9D /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58CA5321EE47C100F8AB9D /* StationTableViewCell.swift */; };
 		1E58CA5621EE4FB600F8AB9D /* StationLiveBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58CA5521EE4FB600F8AB9D /* StationLiveBoardViewController.swift */; };
+		1E58CA5921EF465400F8AB9D /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E58CA5821EF465400F8AB9D /* ErrorModel.swift */; };
 		1EB3830221A45967007C529F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3830121A45967007C529F /* AppDelegate.swift */; };
 		1EB3830721A45967007C529F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830521A45967007C529F /* Main.storyboard */; };
 		1EB3830921A45969007C529F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB3830821A45969007C529F /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		1E31BD0721B00DB30006333F /* ConnectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionTableViewCell.swift; sourceTree = "<group>"; };
 		1E58CA5321EE47C100F8AB9D /* StationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
 		1E58CA5521EE4FB600F8AB9D /* StationLiveBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationLiveBoardViewController.swift; sourceTree = "<group>"; };
+		1E58CA5821EF465400F8AB9D /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		1EB382FE21A45967007C529F /* iRail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB3830121A45967007C529F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EB3830621A45967007C529F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		1E58CA5721EF464400F8AB9D /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1E58CA5821EF465400F8AB9D /* ErrorModel.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		1EB382F521A45967007C529F = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		1EB3831521A45ADC007C529F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1E58CA5721EF464400F8AB9D /* Error */,
 				1E273A5D21EDEBE50072494D /* Disturbance */,
 				1E273A5C21EDEB420072494D /* Connection */,
 			);
@@ -311,6 +322,7 @@
 				1EB3831921A45BE6007C529F /* Connection.swift in Sources */,
 				1E31BD0521B00B170006333F /* Landing.swift in Sources */,
 				1E273A6521EDF2060072494D /* DisturbanceTableViewCell.swift in Sources */,
+				1E58CA5921EF465400F8AB9D /* ErrorModel.swift in Sources */,
 				1EB3832021A45E2F007C529F /* ConnectionSearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
