@@ -39,18 +39,31 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
         self.connectionTableView.dataSource = self
         self.connectionTableView.delegate = self
         
-        Alamofire.request("https://api.irail.be/stations/?format=json&lang=en").responseJSON { response in
-            if let json = response.result.value {
-                if let dictionary = json as? [String: Any] {
-                    if let stations = dictionary["station"] as? [[String : Any]] {
+        let request = Alamofire.request("https://api.irail.be/stations/?format=json&lang=en")
+        request.validate()
+        request.response { response in
+            if response.error == nil {
+                if let json = try! JSONSerialization.jsonObject(with: response.data!, options: []) as? [String : Any] {
+                    if let stations = json["station"] as? [[String : Any]] {
                         stations.forEach{ station in
                             if let name = station["name"] as? String {
                                 self.stationsNames.append(name)
                             }
                         }
-                        self.stationsNames = self.stationsNames.sorted { $0 < $1 }
-                        self.loadFilters()
                     }
+                }
+            }
+            else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
+                self.connectionTableView.isHidden = true
+                print("NotConnected")
+            }
+            else
+            {
+                self.connectionTableView.isHidden = true
+                if let json = response.data {
+                    let decoder = JSONDecoder()
+                    let error = try! decoder.decode(ErrorModel.self, from: json)
+                    print(error.message)
                 }
             }
         }
@@ -159,8 +172,8 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "connectionTableViewCell", for: indexPath) as! ConnectionTableViewCell
         if (connection != nil) {
-            let from = connection?.connection[indexPath.item].arrival.station
-            let to = connection?.connection[indexPath.item].departure.station
+            let from = connection?.connection[indexPath.item].departure.station
+            let to = connection?.connection[indexPath.item].arrival.station
             let fromTime = connection?.connection[indexPath.item].departure.time
             let toTime = connection?.connection[indexPath.item].arrival.time
             cell.toLabel?.text = to

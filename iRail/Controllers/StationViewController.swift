@@ -31,16 +31,31 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func loadStations() {
-        Alamofire.request("https://api.irail.be/stations/?format=json&lang=en").responseJSON { response in
-            if let json = response.result.value {
-                if let dictionary = json as? [String: Any] {
-                    if let stations = dictionary["station"] as? [[String : Any]] {
+        let request = Alamofire.request("https://api.irail.be/stations/?format=json&lang=en")
+        request.validate()
+        request.response { response in
+            if response.error == nil {
+                if let json = try! JSONSerialization.jsonObject(with: response.data!, options: []) as? [String : Any] {
+                    if let stations = json["station"] as? [[String : Any]] {
                         stations.forEach{ station in
                             if let name = station["name"] as? String {
                                 self.stationsNames.append(name)
                             }
                         }
                     }
+                }
+            }
+            else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
+                self.stationTableView.isHidden = true
+                print("NotConnected")
+            }
+            else
+            {
+                self.stationTableView.isHidden = true
+                if let json = response.data {
+                    let decoder = JSONDecoder()
+                    let error = try! decoder.decode(ErrorModel.self, from: json)
+                    print(error.message)
                 }
             }
         }
@@ -54,7 +69,6 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.results.append(name)
             }
         }
-        print(self.results)
         self.stationTableView.reloadData()
         stationTableView.isHidden = false
     }

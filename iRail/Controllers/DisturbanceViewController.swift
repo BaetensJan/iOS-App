@@ -26,13 +26,28 @@ class DisturbanceViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func getDisturbances() {
-        Alamofire.request("https://api.irail.be/disturbances/?format=json&lang=en").responseJSON { response in
-            if let json = response.data {
-                let decoder = JSONDecoder()
-                self.disturbances = try! decoder.decode(DisturbanceWrapper.self, from: json)
-                self.disturbanceTableView.reloadData()
+        let request = Alamofire.request("https://api.irail.be/disturbances/?format=json&lang=en")
+        request.validate()
+        request.response { response in
+            if response.error == nil {
+                if let json = response.data {
+                    let decoder = JSONDecoder()
+                    self.disturbances = try! decoder.decode(DisturbanceWrapper.self, from: json)
+                    self.disturbanceTableView.reloadData()
+                }
+                self.disturbanceTableView.isHidden = false
             }
-            self.disturbanceTableView.isHidden = false
+            else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
+                self.disturbanceTableView.isHidden = true
+                print("NotConnected")
+            } else {
+                self.disturbanceTableView.isHidden = true
+                if let json = response.data {
+                    let decoder = JSONDecoder()
+                    let error = try! decoder.decode(ErrorModel.self, from: json)
+                    print(error.message)
+                }
+            }
         }
     }
     
