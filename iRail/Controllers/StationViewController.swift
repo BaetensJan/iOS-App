@@ -13,6 +13,7 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var stationTableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var stationTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var stationsNames: [String] = []
     var results:[String] = []
@@ -46,8 +47,10 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
             else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
-                self.stationTableView.isHidden = true
-                print("NotConnected")
+                self.errorLabel.text = "No Connection"
+            }
+            else if let err = response.error as? URLError, (err.code  == URLError.Code.timedOut || err.code == URLError.Code.cannotConnectToHost){
+                self.errorLabel.text = "Timed Out"
             }
             else
             {
@@ -62,15 +65,20 @@ class StationViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func touchUp(_ sender: Any) {
-        results = []
-        for name in stationsNames
-        {
-            if name.lowercased().contains(stationTextField!.text!.lowercased()) {
-                self.results.append(name)
+        if stationsNames.isEmpty {
+            self.stationTableView.isHidden = true
+            self.errorLabel.isHidden = false
+        } else {
+            results = []
+            for name in stationsNames
+            {
+                if name.lowercased().contains(stationTextField!.text!.lowercased()) {
+                    self.results.append(name)
+                }
             }
+            self.stationTableView.reloadData()
+            stationTableView.isHidden = false
         }
-        self.stationTableView.reloadData()
-        stationTableView.isHidden = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

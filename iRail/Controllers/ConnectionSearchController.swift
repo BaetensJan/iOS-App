@@ -20,6 +20,7 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
     @IBOutlet weak var txtTimePicker: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var connectionTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var connection: ConnectionWrapper? = nil
     let timePicker = UIDatePicker()
@@ -50,12 +51,21 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
                                 self.stationsNames.append(name)
                             }
                         }
+                        self.loadFilters()
+                        self.errorLabel.isHidden = true
                     }
                 }
             }
             else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
                 self.connectionTableView.isHidden = true
-                print("NotConnected")
+                self.errorLabel.text = "Not Connected"
+                self.errorLabel.isHidden = false
+            }
+
+            else if let err = response.error as? URLError, (err.code  == URLError.Code.timedOut || err.code == URLError.Code.cannotConnectToHost){
+                self.connectionTableView.isHidden = true
+                self.errorLabel.text = "Timed Out"
+                self.errorLabel.isHidden = false
             }
             else
             {
@@ -63,7 +73,8 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
                 if let json = response.data {
                     let decoder = JSONDecoder()
                     let error = try! decoder.decode(ErrorModel.self, from: json)
-                    print(error.message)
+                    self.errorLabel.text = error.message
+                    self.errorLabel.isHidden = false
                 }
             }
         }
@@ -153,13 +164,26 @@ class ConnectionSearchController: UIViewController, UITextFieldDelegate, UITable
                     print(self.connection?.connection ?? "")
                     self.connectionTableView.reloadData()
                 }
+                self.errorLabel.isHidden = true
                 self.connectionTableView.isHidden = false
-            } else {
+            }
+            else if let err = response.error as? URLError, (err.code  == URLError.Code.timedOut || err.code == URLError.Code.cannotConnectToHost){
+                self.connectionTableView.isHidden = true
+                self.errorLabel.text = "Not Connected"
+                self.errorLabel.isHidden = false
+            }
+            else if let err = response.error as? URLError, (err.code  == URLError.Code.timedOut || err.code == URLError.Code.cannotConnectToHost){
+                self.connectionTableView.isHidden = true
+                self.errorLabel.text = "Timed Out"
+                self.errorLabel.isHidden = false
+            }
+            else {
                 self.connectionTableView.isHidden = true
                 if let json = response.data {
                     let decoder = JSONDecoder()
                     let error = try! decoder.decode(ErrorModel.self, from: json)
-                    print(error.message)
+                    self.errorLabel.text = error.message
+                    self.errorLabel.isHidden = false
                 }
             }
         }

@@ -11,6 +11,7 @@ import Alamofire
 class DisturbanceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var disturbanceTableView: UITableView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var disturbances: DisturbanceWrapper? = nil
     var touchedDisturbance:Disturbance? = nil
@@ -35,17 +36,26 @@ class DisturbanceViewController: UIViewController, UITableViewDataSource, UITabl
                     self.disturbances = try! decoder.decode(DisturbanceWrapper.self, from: json)
                     self.disturbanceTableView.reloadData()
                 }
+                self.errorLabel.isHidden = true
                 self.disturbanceTableView.isHidden = false
             }
             else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
                 self.disturbanceTableView.isHidden = true
-                print("NotConnected")
-            } else {
+                self.errorLabel.text = "Not Connected"
+                self.errorLabel.isHidden = false
+            }
+            else if let err = response.error as? URLError, (err.code  == URLError.Code.timedOut || err.code == URLError.Code.cannotConnectToHost){
+                self.disturbanceTableView.isHidden = true
+                self.errorLabel.text = "Timed Out"
+                self.errorLabel.isHidden = false
+            }
+            else {
                 self.disturbanceTableView.isHidden = true
                 if let json = response.data {
                     let decoder = JSONDecoder()
                     let error = try! decoder.decode(ErrorModel.self, from: json)
-                    print(error.message)
+                    self.errorLabel.text = error.message
+                    self.errorLabel.isHidden = false
                 }
             }
         }

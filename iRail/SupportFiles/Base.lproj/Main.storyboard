@@ -53,12 +53,20 @@
                                     <outlet property="delegate" destination="gu2-MP-YgY" id="Cgo-Sx-2Ik"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-rI-iLe">
+                                <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Tzy-rI-iLe" firstAttribute="centerX" secondItem="jTn-uB-OmL" secondAttribute="centerX" id="1T5-cT-qDe"/>
                             <constraint firstItem="Ix8-ij-EvC" firstAttribute="leading" secondItem="NcN-9Q-KE0" secondAttribute="leading" constant="16" id="GH6-NP-LEO"/>
                             <constraint firstItem="NcN-9Q-KE0" firstAttribute="trailing" secondItem="Ix8-ij-EvC" secondAttribute="trailing" constant="16" id="T1n-DG-lLN"/>
                             <constraint firstItem="Ix8-ij-EvC" firstAttribute="top" secondItem="NcN-9Q-KE0" secondAttribute="top" constant="16" id="bMp-jr-8u4"/>
+                            <constraint firstItem="Tzy-rI-iLe" firstAttribute="centerY" secondItem="jTn-uB-OmL" secondAttribute="centerY" id="fTJ-w9-cDS"/>
                             <constraint firstItem="NcN-9Q-KE0" firstAttribute="bottom" secondItem="Ix8-ij-EvC" secondAttribute="bottom" constant="16" id="yiz-CN-Jtr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NcN-9Q-KE0"/>
@@ -66,6 +74,7 @@
                     <tabBarItem key="tabBarItem" title="Disturbtions" image="bell" id="i8S-r9-zqH"/>
                     <connections>
                         <outlet property="disturbanceTableView" destination="Ix8-ij-EvC" id="ehe-es-NfQ"/>
+                        <outlet property="errorLabel" destination="Tzy-rI-iLe" id="NyH-IT-NjS"/>
                         <segue destination="4t9-PZ-iVA" kind="show" identifier="disturbanceDetailSegue" id="TjN-dn-vvm"/>
                     </connections>
                 </viewController>
@@ -194,6 +203,12 @@
                                     <outlet property="delegate" destination="RXs-Yh-4Dv" id="yUH-CN-h2j"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fX-hq-9TD">
+                                <rect key="frame" x="166.5" y="323.5" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -201,6 +216,8 @@
                             <constraint firstItem="0Gp-mK-TbB" firstAttribute="leading" secondItem="ylA-uw-jMK" secondAttribute="leading" constant="16" id="AWP-XF-Bm0"/>
                             <constraint firstItem="n9u-vk-XAU" firstAttribute="top" secondItem="XDJ-et-GhN" secondAttribute="bottom" constant="8" id="HRu-Ve-JqW"/>
                             <constraint firstItem="ylA-uw-jMK" firstAttribute="trailing" secondItem="0Gp-mK-TbB" secondAttribute="trailing" constant="16" id="RIf-dE-7NR"/>
+                            <constraint firstItem="4fX-hq-9TD" firstAttribute="centerX" secondItem="RXs-Yh-4Dv" secondAttribute="centerX" id="SO9-ax-odV"/>
+                            <constraint firstItem="4fX-hq-9TD" firstAttribute="centerY" secondItem="RXs-Yh-4Dv" secondAttribute="centerY" id="SVZ-VZ-fWh"/>
                             <constraint firstItem="XDJ-et-GhN" firstAttribute="leading" secondItem="ylA-uw-jMK" secondAttribute="leading" constant="16" id="UKc-EF-BBO"/>
                             <constraint firstItem="XDJ-et-GhN" firstAttribute="top" secondItem="ylA-uw-jMK" secondAttribute="top" constant="32" id="UOm-bP-StS"/>
                             <constraint firstItem="ylA-uw-jMK" firstAttribute="trailing" secondItem="XDJ-et-GhN" secondAttribute="trailing" constant="16" id="XYh-kC-6zg"/>
@@ -212,6 +229,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Station" image="train-station" id="Ab9-yA-CgG"/>
                     <connections>
+                        <outlet property="errorLabel" destination="4fX-hq-9TD" id="7k0-mW-ydt"/>
                         <outlet property="searchButton" destination="n9u-vk-XAU" id="SLS-f6-aRD"/>
                         <outlet property="stationTableView" destination="0Gp-mK-TbB" id="jmP-2k-xOS"/>
                         <outlet property="stationTextField" destination="XDJ-et-GhN" id="ZZ7-eJ-sHQ"/>
@@ -230,6 +248,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YO9-rN-lh5">
+                                <rect key="frame" x="168.5" y="323.5" width="38" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M6p-Hd-DdU">
                                 <rect key="frame" x="16" y="80" width="343" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -284,10 +308,13 @@
                             <constraint firstItem="7RY-4x-7Ev" firstAttribute="bottom" secondItem="M6p-Hd-DdU" secondAttribute="bottom" constant="16" id="PbW-NQ-e40"/>
                             <constraint firstItem="M6p-Hd-DdU" firstAttribute="leading" secondItem="7RY-4x-7Ev" secondAttribute="leading" constant="16" id="Qlt-yj-St2"/>
                             <constraint firstItem="7RY-4x-7Ev" firstAttribute="trailing" secondItem="M6p-Hd-DdU" secondAttribute="trailing" constant="16" id="SQF-7K-GTz"/>
+                            <constraint firstItem="YO9-rN-lh5" firstAttribute="centerX" secondItem="lTQ-AD-yX1" secondAttribute="centerX" id="UBJ-Ta-qTQ"/>
+                            <constraint firstItem="YO9-rN-lh5" firstAttribute="centerY" secondItem="lTQ-AD-yX1" secondAttribute="centerY" id="g4q-o5-NE4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7RY-4x-7Ev"/>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="YO9-rN-lh5" id="fvc-Mj-1ty"/>
                         <outlet property="liveboardTableView" destination="M6p-Hd-DdU" id="c0O-Xt-HWk"/>
                     </connections>
                 </viewController>
@@ -424,11 +451,19 @@
                                     <outlet property="delegate" destination="Phk-K3-mln" id="8uI-wu-c5d"/>
                                 </connections>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huc-2T-DR4">
+                                <rect key="frame" x="16" y="323.5" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="t2J-RI-SHb" firstAttribute="top" secondItem="4O6-Gv-tgJ" secondAttribute="top" constant="32" id="249-ee-krP"/>
+                            <constraint firstItem="huc-2T-DR4" firstAttribute="leading" secondItem="4O6-Gv-tgJ" secondAttribute="leading" constant="16" id="2Ms-2p-rH9"/>
                             <constraint firstItem="4O6-Gv-tgJ" firstAttribute="trailing" secondItem="uDI-Ha-nL6" secondAttribute="trailing" constant="16" id="7Dt-LR-X5c"/>
+                            <constraint firstItem="huc-2T-DR4" firstAttribute="centerX" secondItem="Phk-K3-mln" secondAttribute="centerX" id="H2s-68-NoL"/>
                             <constraint firstItem="4O6-Gv-tgJ" firstAttribute="trailing" secondItem="XaN-zx-DsM" secondAttribute="trailing" constant="80" id="HsU-y5-YYJ"/>
                             <constraint firstItem="kLi-W3-VYJ" firstAttribute="top" secondItem="XaN-zx-DsM" secondAttribute="bottom" constant="16" id="JGh-dc-x8B"/>
                             <constraint firstItem="kLi-W3-VYJ" firstAttribute="leading" secondItem="4O6-Gv-tgJ" secondAttribute="leading" constant="16" id="QFx-XX-DGj"/>
@@ -437,8 +472,10 @@
                             <constraint firstItem="XaN-zx-DsM" firstAttribute="top" secondItem="uDI-Ha-nL6" secondAttribute="bottom" constant="16" id="TiB-aY-N4h"/>
                             <constraint firstItem="4O6-Gv-tgJ" firstAttribute="trailing" secondItem="t2J-RI-SHb" secondAttribute="trailing" constant="16" id="ZuD-wf-Vxy"/>
                             <constraint firstItem="4O6-Gv-tgJ" firstAttribute="trailing" secondItem="kLi-W3-VYJ" secondAttribute="trailing" constant="16" id="af3-0x-SFO"/>
+                            <constraint firstItem="4O6-Gv-tgJ" firstAttribute="trailing" secondItem="huc-2T-DR4" secondAttribute="trailing" constant="16" id="c4g-0g-UZQ"/>
                             <constraint firstItem="XaN-zx-DsM" firstAttribute="leading" secondItem="4O6-Gv-tgJ" secondAttribute="leading" constant="80" id="gct-5c-GaG"/>
                             <constraint firstItem="uDI-Ha-nL6" firstAttribute="top" secondItem="8BX-xn-ZHc" secondAttribute="bottom" constant="16" id="h5T-YW-so8"/>
+                            <constraint firstItem="huc-2T-DR4" firstAttribute="centerY" secondItem="Phk-K3-mln" secondAttribute="centerY" id="jjh-0g-KI3"/>
                             <constraint firstItem="8BX-xn-ZHc" firstAttribute="top" secondItem="t2J-RI-SHb" secondAttribute="bottom" constant="16" id="l8c-mB-Fke"/>
                             <constraint firstItem="uDI-Ha-nL6" firstAttribute="leading" secondItem="4O6-Gv-tgJ" secondAttribute="leading" constant="16" id="lkP-na-gsA"/>
                             <constraint firstItem="4O6-Gv-tgJ" firstAttribute="trailing" secondItem="8BX-xn-ZHc" secondAttribute="trailing" constant="16" id="pXq-6K-PvT"/>
@@ -450,6 +487,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="connectionTableView" destination="kLi-W3-VYJ" id="TQ5-G0-XWr"/>
+                        <outlet property="errorLabel" destination="huc-2T-DR4" id="QKm-zY-6sK"/>
                         <outlet property="fromStationSearchField" destination="t2J-RI-SHb" id="aLx-IT-XWD"/>
                         <outlet property="searchButton" destination="XaN-zx-DsM" id="7TJ-Qd-Sk9"/>
                         <outlet property="toStationSearchField" destination="8BX-xn-ZHc" id="Uki-NH-JZ8"/>

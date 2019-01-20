@@ -13,6 +13,7 @@ class StationLiveBoardViewController: UIViewController, UITableViewDataSource, U
     var station: String = ""
     var liveboard: LiveboardWrapper? = nil
     
+    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var liveboardTableView: UITableView!
     
     //https://api.irail.be/liveboard/?id=BE.NMBS.008892007&station=Gent-Sint-Pieters
@@ -35,17 +36,26 @@ class StationLiveBoardViewController: UIViewController, UITableViewDataSource, U
                     self.liveboard = try! decoder.decode(LiveboardWrapper.self, from: json)
                     self.liveboardTableView.reloadData()
                 }
+                self.errorLabel.isHidden = true
                 self.liveboardTableView.isHidden = false
             }
             else if let err = response.error as? URLError, err.code  == URLError.Code.notConnectedToInternet {
                 self.liveboardTableView.isHidden = true
-                print("NotConnected")
-            } else {
+                self.errorLabel.text = "Not Connected"
+                self.errorLabel.isHidden = false
+            }
+            else if let err = response.error as? URLError, (err.code  == URLError.Code.timedOut || err.code == URLError.Code.cannotConnectToHost){
+                self.liveboardTableView.isHidden = true
+                self.errorLabel.text = "Timed Out"
+                self.errorLabel.isHidden = false
+            }
+            else {
                 self.liveboardTableView.isHidden = true
                 if let json = response.data {
                     let decoder = JSONDecoder()
                     let error = try! decoder.decode(ErrorModel.self, from: json)
-                    print(error.message)
+                    self.errorLabel.text = error.message
+                    self.errorLabel.isHidden = false
                 }
             }
         }
